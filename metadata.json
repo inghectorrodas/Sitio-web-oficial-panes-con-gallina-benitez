@@ -1,0 +1,8 @@
+{
+  "name": "Sitio web Panes con Gallina Benítez",
+  "description": "Sitio web oficial de Panes con Gallina Benítez con menú interactivo, noticias sincronizadas con redes sociales, historia y contacto.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
