@@ -1,8 +1,8 @@
 import { MenuItem, SocialPost, HistoryEvent, ContactInfo } from '../types';
-import pan1Img from '../assets/images/pan1.jpg';
-import pan2Img from '../assets/images/pan2.jpg';
-import mamaImg from '../assets/images/mama.png';
-import abuelaImg from '../assets/images/abuela.jpg';
+import pan1Img from '../assets/pan1.jpg';
+import pan2Img from '../assets/pan2.jpg';
+import mamaImg from '../assets/mama.png';
+import abuelaImg from '../assets/abuela.jpg';
 
 export const RESTAURANT_INFO: ContactInfo = {
   whatsapp: '+503 7216-4704',
@@ -123,36 +123,36 @@ export const HISTORY_TIMELINE: HistoryEvent[] = [
     year: '1968',
     title: 'El Humilde Inicio en Usulután (Noviembre de 1968)',
     description: 'En noviembre de 1968, doña Lucía Benítez comenzó a vender sus primeros panes con gallina india criolla en una carreta tradicional cerca del parque central, usando la mítica receta familiar de recaudo criollo.',
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800',
+    image: abuelaImg,
     highlight: 'Fundación en Noviembre de 1968'
   },
   {
     year: '1995',
     title: 'Perfeccionamiento del Curtido Secreto',
-    description: 'Nace la firma registrada del curtido de piña fermentada y la salsa caliente de berro que distingue a la marca Benítez en toda la capital.',
-    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=800',
-    highlight: 'Inauguración del primer local con mesas'
+    description: 'Nace la firma registrada del curtido de piña fermentada y la salsa caliente de berro que distingue a la marca Benítez en toda la región.',
+    image: pan1Img,
+    highlight: 'Inauguración del primer local tradicional'
   },
   {
     year: '2008',
     title: 'Sede Principal en la 4a Calle Pte. Barrio El Calvario, Usulután Este',
-    description: 'Apertura del espacioso restaurante familiar en la 4a Calle Pte. Barrio El Calvario, Usulután Este, incorporando sopas de gallina criolla y asados a la leña.',
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=800',
-    highlight: 'Espacio para 150 comensales'
+    description: 'Apertura del espacioso restaurante familiar en la 4a Calle Pte. Barrio El Calvario, Usulután Este, manteniendo la calidad artesanal de la gallina criolla de patio.',
+    image: pan2Img,
+    highlight: 'Tradición en Usulután'
   },
   {
     year: '2020',
-    title: 'Reconocimiento Gastronómico y Expansión',
-    description: 'Ganan el premio a la Mejor Receta Tradicional de Panes con Gallina de El Salvador por 3 años consecutivos.',
-    image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=800',
-    highlight: 'Premio Culinario Cuscatlán'
+    title: 'Reconocimiento Gastronómico y Legado',
+    description: 'Bajo la dirección de Morenas del Carmen Benítez de Rodas, se consolida como parada obligatoria de la gastronomía salvadoreña.',
+    image: mamaImg,
+    highlight: 'Sazón de Generaciones'
   },
   {
     year: '2026',
     title: 'Modernización Digital e Integración Social',
-    description: 'Lanzamiento de la plataforma en línea con sincronización de noticias en tiempo real con Facebook e Instagram y servicio express a todo el país.',
-    image: 'https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&q=80&w=800',
-    highlight: 'Pedidos por WhatsApp y Feed en vivo'
+    description: 'Lanzamiento de la plataforma en línea con pedidos directos por WhatsApp y presencia activa de nuestra historia y platillos.',
+    image: pan1Img,
+    highlight: 'Pedidos por WhatsApp & Redes'
   }
 ];
 

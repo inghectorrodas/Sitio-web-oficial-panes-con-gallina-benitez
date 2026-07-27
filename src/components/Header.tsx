@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Phone, Clock, MapPin, Menu, X, Sparkles, RefreshCw } from 'lucide-react';
+import { ShoppingBag, Phone, Clock, MapPin, Menu, X, Sparkles, Camera } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
 interface HeaderProps {
@@ -7,13 +7,15 @@ interface HeaderProps {
   setActiveTab: (tab: string) => void;
   cartCount: number;
   onOpenCart: () => void;
+  onOpenImageManager: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
   setActiveTab,
   cartCount,
-  onOpenCart
+  onOpenCart,
+  onOpenImageManager
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSaturday, setIsSaturday] = useState(false);
@@ -111,8 +113,9 @@ export const Header: React.FC<HeaderProps> = ({
           })}
         </nav>
 
-        {/* Actions (Cart & Mobile Menu Trigger) */}
+        {/* Actions (Image Manager, Cart & Mobile Menu Trigger) */}
         <div className="flex items-center space-x-3">
+
           <button
             onClick={onOpenCart}
             className="relative bg-zinc-900 border border-orange-500/40 hover:border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black p-2.5 rounded-xl transition-all duration-200 flex items-center gap-2 group"
@@ -159,6 +162,16 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
             );
           })}
+          <button
+            onClick={() => {
+              onOpenImageManager();
+              setMobileMenuOpen(false);
+            }}
+            className="w-full text-left px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-wider flex items-center justify-between bg-zinc-900 border border-zinc-800 text-orange-400"
+          >
+            <span>Subir / Administrar Imágenes</span>
+            <Camera className="w-4 h-4" />
+          </button>
         </div>
       )}
     </header>

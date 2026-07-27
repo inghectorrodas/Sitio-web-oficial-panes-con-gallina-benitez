@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { MENU_ITEMS } from '../data/restaurantData';
 import { MenuItem } from '../types';
+import { getImage } from '../utils/imageStore';
 
 interface MenuSectionProps {
   onAddToCart: (item: MenuItem, notes?: string) => void;
@@ -125,7 +126,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                 {/* Image & Badge */}
                 <div className="relative h-48 w-full overflow-hidden bg-zinc-950">
                   <img
-                    src={item.image}
+                    src={getImage(item.id === 'pan-pechuga' ? 'pan1' : item.id === 'pan-entrepierna' ? 'pan2' : 'pan1', item.image)}
                     alt={item.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -209,7 +210,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
           <div className="bg-zinc-900 border border-zinc-800 rounded-3xl max-w-lg w-full overflow-hidden space-y-4 shadow-2xl">
             <div className="relative h-56 w-full">
               <img
-                src={selectedItemDetail.image}
+                src={getImage(selectedItemDetail.id === 'pan-pechuga' ? 'pan1' : selectedItemDetail.id === 'pan-entrepierna' ? 'pan2' : 'pan1', selectedItemDetail.image)}
                 alt={selectedItemDetail.name}
                 className="w-full h-full object-cover"
               />

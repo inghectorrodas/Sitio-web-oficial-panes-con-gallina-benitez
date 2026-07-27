@@ -12,19 +12,23 @@ import {
   Award,
   CheckCircle,
   Flame,
-  Truck
+  Truck,
+  Camera
 } from 'lucide-react';
 import { MENU_ITEMS, RESTAURANT_INFO } from '../data/restaurantData';
 import { MenuItem } from '../types';
+import { getImage } from '../utils/imageStore';
 
 interface BentoGridHomeProps {
   onSelectTab: (tab: string) => void;
   onAddToCart: (item: MenuItem) => void;
+  onOpenImageManager?: () => void;
 }
 
 export const BentoGridHome: React.FC<BentoGridHomeProps> = ({
   onSelectTab,
   onAddToCart,
+  onOpenImageManager,
 }) => {
   const [isSaturday, setIsSaturday] = useState(false);
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Users, Heart, CheckCircle, ShieldCheck, Camera, Award } from 'lucide-react';
-import pan1Img from '../assets/images/pan1.jpg';
-import pan2Img from '../assets/images/pan2.jpg';
-import mamaImg from '../assets/images/mama.png';
-import abuelaImg from '../assets/images/abuela.jpg';
-import logoOfficial from '../assets/logo.png';
+import pan1Img from '../assets/pan1.jpg';
+import pan2Img from '../assets/pan2.jpg';
+import mamaImg from '../assets/mama.png';
+import abuelaImg from '../assets/abuela.jpg';
+import { getImage } from '../utils/imageStore';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -27,9 +27,12 @@ export const AboutSection: React.FC = () => {
         <div className="z-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 bg-zinc-950 p-4 rounded-2xl border border-zinc-800 w-full md:w-auto">
           <div className="flex items-center gap-3 border-b sm:border-b-0 sm:border-r border-zinc-800 pb-3 sm:pb-0 sm:pr-4">
             <img
-              src={abuelaImg}
+              src={getImage('abuela', abuelaImg)}
               alt="Doña Lucía Benítez"
               className="w-12 h-12 rounded-xl object-cover border border-orange-500/50 shrink-0 shadow-md"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300';
+              }}
             />
             <div>
               <div className="text-sm font-black text-white">Doña Lucía Benítez</div>
@@ -39,9 +42,12 @@ export const AboutSection: React.FC = () => {
 
           <div className="flex items-center gap-3">
             <img
-              src={mamaImg}
+              src={getImage('mama', mamaImg)}
               alt="Morenas del Carmen Benítez de Rodas"
               className="w-12 h-12 rounded-xl object-cover border border-amber-500/50 shrink-0 shadow-md"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300';
+              }}
             />
             <div>
               <div className="text-sm font-black text-white">Morenas del Carmen Benítez de Rodas</div>
@@ -72,9 +78,12 @@ export const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="group relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950 aspect-square">
             <img
-              src={abuelaImg}
+              src={getImage('abuela', abuelaImg)}
               alt="Doña Lucía Benítez - Fundadora"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600';
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-4 flex flex-col justify-end">
               <span className="text-xs font-black text-orange-400 uppercase tracking-wider">Doña Lucía Benítez</span>
@@ -84,9 +93,12 @@ export const AboutSection: React.FC = () => {
 
           <div className="group relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950 aspect-square">
             <img
-              src={mamaImg}
+              src={getImage('mama', mamaImg)}
               alt="Morenas del Carmen Benítez de Rodas"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600';
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-4 flex flex-col justify-end">
               <span className="text-xs font-black text-orange-400 uppercase tracking-wider">Morenas del Carmen Benítez de Rodas</span>
@@ -96,9 +108,12 @@ export const AboutSection: React.FC = () => {
 
           <div className="group relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950 aspect-square">
             <img
-              src={pan1Img}
+              src={getImage('pan1', pan1Img)}
               alt="Pan Con Pechuga Tradicional"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=600';
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-4 flex flex-col justify-end">
               <span className="text-xs font-black text-orange-400 uppercase tracking-wider">Pan Con Pechuga</span>
@@ -108,9 +123,12 @@ export const AboutSection: React.FC = () => {
 
           <div className="group relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950 aspect-square">
             <img
-              src={pan2Img}
+              src={getImage('pan2', pan2Img)}
               alt="Pan Con Entre Pierna Benítez"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=600';
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-4 flex flex-col justify-end">
               <span className="text-xs font-black text-orange-400 uppercase tracking-wider">Pan Con Entre Pierna</span>

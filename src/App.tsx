@@ -5,6 +5,7 @@ import { MenuSection } from './components/MenuSection';
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { OrderCartModal } from './components/OrderCartModal';
+import { ImageManagerModal } from './components/ImageManagerModal';
 import { Footer } from './components/Footer';
 import { MenuItem, CartItem } from './types';
 
@@ -12,6 +13,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<string>('home');
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [cartModalOpen, setCartModalOpen] = useState<boolean>(false);
+  const [imageModalOpen, setImageModalOpen] = useState<boolean>(false);
 
   const handleAddToCart = (item: MenuItem, notes?: string) => {
     setCartItems((prev) => {
@@ -59,6 +61,7 @@ export default function App() {
         setActiveTab={setActiveTab}
         cartCount={totalCartCount}
         onOpenCart={() => setCartModalOpen(true)}
+        onOpenImageManager={() => setImageModalOpen(true)}
       />
 
       {/* Main Content Render */}
@@ -67,6 +70,7 @@ export default function App() {
           <BentoGridHome
             onSelectTab={setActiveTab}
             onAddToCart={handleAddToCart}
+            onOpenImageManager={() => setImageModalOpen(true)}
           />
         )}
 
@@ -93,8 +97,14 @@ export default function App() {
         onClearCart={handleClearCart}
       />
 
+      {/* Image Manager Modal */}
+      <ImageManagerModal
+        isOpen={imageModalOpen}
+        onClose={() => setImageModalOpen(false)}
+      />
+
       {/* Footer */}
-      <Footer onSelectTab={setActiveTab} />
+      <Footer onSelectTab={setActiveTab} onOpenImageManager={() => setImageModalOpen(true)} />
     </div>
   );
 }
