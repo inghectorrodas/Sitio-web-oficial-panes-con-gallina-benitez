@@ -6,7 +6,7 @@ import abuelaImg from '../assets/abuela.jpg';
 
 export const RESTAURANT_INFO: ContactInfo = {
   whatsapp: '+503 7216-4704',
-  address: '4a Calle Pte. Barrio El Calvario, Usulután Este',
+  address: 'Final Avenida Gregorio Melara al costado Oriente de Iglesia El Calvario Barrio El Calvario',
   city: 'Usulután Este, El Salvador',
   country: 'El Salvador',
   hoursWeekdays: 'Sábados: 04:00 PM - 10:00 PM',
@@ -68,7 +68,7 @@ export const INITIAL_SOCIAL_POSTS: SocialPost[] = [
     avatar: mamaImg,
     timeAgo: 'Ayer a las 4:30 PM',
     timestamp: '2026-07-23T16:30:00Z',
-    content: '¡Te esperamos este Sábado de 4:00 PM a 10:00 PM en Usulután Este! 📍 4a Calle Pte. Barrio El Calvario. Disfruta el auténtico Pan Con Pechuga ($6.00) y Pan Con Entre Pierna ($6.00). Haz tus pedidos a domicilio por WhatsApp al 7216-4704.',
+    content: '¡Te esperamos este Sábado de 4:00 PM a 10:00 PM en Usulután Este! 📍 Final Avenida Gregorio Melara al costado Oriente de Iglesia El Calvario Barrio El Calvario, Usulután Este, El Salvador. Disfruta el auténtico Pan Con Pechuga ($6.00) y Pan Con Entre Pierna ($6.00). Haz tus pedidos a domicilio por WhatsApp al 7216-4704.',
     image: pan2Img,
     likes: 512,
     comments: 2,
@@ -135,8 +135,8 @@ export const HISTORY_TIMELINE: HistoryEvent[] = [
   },
   {
     year: '2008',
-    title: 'Sede Principal en la 4a Calle Pte. Barrio El Calvario, Usulután Este',
-    description: 'Apertura del espacioso restaurante familiar en la 4a Calle Pte. Barrio El Calvario, Usulután Este, manteniendo la calidad artesanal de la gallina criolla de patio.',
+    title: 'Sede Principal en la Final Avenida Gregorio Melara al costado Oriente de Iglesia El Calvario Barrio El Calvario, Usulután Este, El Salvador',
+    description: 'Apertura del espacioso restaurante familiar en la Final Avenida Gregorio Melara al costado Oriente de Iglesia El Calvario Barrio El Calvario, Usulután Este, manteniendo la calidad artesanal de la gallina criolla de patio.',
     image: pan2Img,
     highlight: 'Tradición en Usulután'
   },

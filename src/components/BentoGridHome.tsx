@@ -194,7 +194,7 @@ export const BentoGridHome: React.FC<BentoGridHomeProps> = ({
               <div>
                 <div className="text-[10px] uppercase font-bold text-zinc-500">Dirección</div>
                 <div className="text-xs font-semibold text-white leading-snug mt-0.5">
-                  4a Calle Pte. Barrio El Calvario, Usulután Este, El Salvador
+                  Final Avenida Gregorio Melara al costado Oriente de Iglesia El Calvario Barrio El Calvario, Usulután Este, El Salvador.
                 </div>
               </div>
 
