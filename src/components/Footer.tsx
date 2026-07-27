@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Phone, MapPin, Heart, Camera } from 'lucide-react';
+import { Facebook, Instagram, Phone, MapPin, Heart } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
 interface FooterProps {
@@ -7,7 +7,7 @@ interface FooterProps {
   onOpenImageManager?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenImageManager }) => {
+export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
   return (
     <footer className="bg-zinc-950 border-t border-zinc-900 text-white mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -47,15 +47,6 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenImageManager 
               >
                 <Instagram className="w-4 h-4" />
               </a>
-              {onOpenImageManager && (
-                <button
-                  onClick={onOpenImageManager}
-                  className="bg-zinc-900 hover:bg-zinc-800 text-orange-400 border border-orange-500/30 px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-colors"
-                >
-                  <Camera className="w-4 h-4" />
-                  <span>Gestionar Imágenes</span>
-                </button>
-              )}
             </div>
           </div>
 
