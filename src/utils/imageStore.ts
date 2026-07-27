@@ -87,10 +87,17 @@ export function saveStoredImages(images: Record<string, string>) {
   }
 }
 
-export function getImage(id: string, defaultFallback: string): string {
+export function getImage(id: string, defaultFallback?: string): string {
   const custom = getStoredImages();
-  if (custom[id]) {
+  if (custom[id] && custom[id].trim() !== '') {
     return custom[id];
   }
-  return defaultFallback;
+  if (defaultFallback && defaultFallback.trim() !== '') {
+    return defaultFallback;
+  }
+  const slot = IMAGE_SLOTS.find((s) => s.id === id);
+  if (slot?.defaultImage && slot.defaultImage.trim() !== '') {
+    return slot.defaultImage;
+  }
+  return pan1Img;
 }

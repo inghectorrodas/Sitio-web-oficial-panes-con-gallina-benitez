@@ -15,7 +15,7 @@ import {
   Truck,
   Camera
 } from 'lucide-react';
-import { MENU_ITEMS, RESTAURANT_INFO } from '../data/restaurantData';
+import { MENU_ITEMS, RESTAURANT_INFO, INITIAL_SOCIAL_POSTS } from '../data/restaurantData';
 import { MenuItem } from '../types';
 import { getImage } from '../utils/imageStore';
 
@@ -257,6 +257,106 @@ export const BentoGridHome: React.FC<BentoGridHomeProps> = ({
               <span>Conócenos</span>
               <ArrowRight className="w-3 h-3" />
             </button>
+          </div>
+        </div>
+
+        {/* SOCIAL MEDIA FEEDS WIDGETS TILE (col-span-12) */}
+        <div className="md:col-span-12 bg-zinc-900/90 border border-zinc-800 rounded-3xl p-6 sm:p-8 space-y-6 relative overflow-hidden">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-zinc-800 pb-4">
+            <div>
+              <div className="flex items-center gap-2 text-xs font-black text-orange-500 uppercase tracking-widest">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Comunidad & Noticias</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight mt-1">
+                Feeds de <span className="text-blue-400">Facebook</span> & <span className="text-pink-500">Instagram</span>
+              </h2>
+            </div>
+
+            <button
+              onClick={() => onSelectTab('social')}
+              className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-orange-400 font-black text-xs uppercase tracking-wider rounded-xl transition-all border border-orange-500/30 flex items-center gap-1.5"
+            >
+              <span>Ver Feed Completo & Interactivo</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+
+          {/* Grid showing Facebook and Instagram preview cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Facebook News Widget Card */}
+            <div className="bg-zinc-950 border border-blue-500/30 rounded-2xl p-4 space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
+                    <Facebook className="w-4 h-4 fill-current" />
+                  </div>
+                  <div>
+                    <div className="font-extrabold text-xs text-white">Facebook Noticias</div>
+                    <div className="text-[10px] text-zinc-400">Página Oficial • 5.8k seguidores</div>
+                  </div>
+                </div>
+                <a
+                  href={RESTAURANT_INFO.facebookUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[10px] font-black text-blue-400 hover:underline uppercase"
+                >
+                  Ir a Facebook
+                </a>
+              </div>
+
+              <div className="text-xs text-zinc-300 line-clamp-3 bg-zinc-900/60 p-3 rounded-xl border border-zinc-800 font-medium">
+                "{INITIAL_SOCIAL_POSTS.find((p) => p.platform === 'facebook')?.content}"
+              </div>
+
+              <div className="flex items-center justify-between text-[11px] text-zinc-400 pt-1">
+                <span>👍 {INITIAL_SOCIAL_POSTS.find((p) => p.platform === 'facebook')?.likes} Me gusta</span>
+                <button
+                  onClick={() => onSelectTab('social')}
+                  className="font-bold text-orange-400 hover:underline"
+                >
+                  Ver comentarios →
+                </button>
+              </div>
+            </div>
+
+            {/* Instagram Feed Widget Card */}
+            <div className="bg-zinc-950 border border-pink-500/30 rounded-2xl p-4 space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 flex items-center justify-center text-white">
+                    <Instagram className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="font-extrabold text-xs text-white">Instagram Feed</div>
+                    <div className="text-[10px] text-zinc-400">@panescongallina_benitez</div>
+                  </div>
+                </div>
+                <a
+                  href={RESTAURANT_INFO.instagramUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[10px] font-black text-pink-400 hover:underline uppercase"
+                >
+                  Ir a Instagram
+                </a>
+              </div>
+
+              <div className="text-xs text-zinc-300 line-clamp-3 bg-zinc-900/60 p-3 rounded-xl border border-zinc-800 font-medium">
+                "{INITIAL_SOCIAL_POSTS.find((p) => p.platform === 'instagram')?.content}"
+              </div>
+
+              <div className="flex items-center justify-between text-[11px] text-zinc-400 pt-1">
+                <span>❤️ {INITIAL_SOCIAL_POSTS.find((p) => p.platform === 'instagram')?.likes} Me gusta</span>
+                <button
+                  onClick={() => onSelectTab('social')}
+                  className="font-bold text-orange-400 hover:underline"
+                >
+                  Ver fotos y tags →
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 

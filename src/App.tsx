@@ -4,6 +4,7 @@ import { BentoGridHome } from './components/BentoGridHome';
 import { MenuSection } from './components/MenuSection';
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
+import { SocialSection } from './components/SocialSection';
 import { OrderCartModal } from './components/OrderCartModal';
 import { ImageManagerModal } from './components/ImageManagerModal';
 import { Footer } from './components/Footer';
@@ -83,6 +84,8 @@ export default function App() {
         )}
 
         {activeTab === 'nosotros' && <AboutSection />}
+
+        {activeTab === 'social' && <SocialSection />}
 
         {activeTab === 'contacto' && <ContactSection />}
       </main>
