@@ -372,7 +372,7 @@ export const BentoGridHome: React.FC<BentoGridHomeProps> = ({
               <span className="text-orange-500">Pide a tu puerta</span>
             </h3>
             <p className="text-xs sm:text-sm text-zinc-400">
-              Llevamos tus panes con gallina recién preparados y la sopa bien caliente a cualquier punto del Gran San Salvador.
+              Llevamos tus panes con gallina recién preparados y la Salsa bien caliente.
             </p>
           </div>
 
