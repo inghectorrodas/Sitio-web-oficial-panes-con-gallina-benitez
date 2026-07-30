@@ -1,10 +1,84 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="src/assets/logo.png" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Panes con Gallina Benítez</title>
+
+    <!-- Google Analytics (GA4) -->
+    <!-- Reemplaza GA_MEASUREMENT_ID con tu ID de seguimiento de Google Analytics (ej: G-XXXXXXXXXX) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MEASUREMENT_ID', {
+        page_title: 'Panes con Gallina Benítez',
+        page_location: window.location.href
+      });
+    </script>
+
+    <!-- Primary Meta Tags & SEO -->
+    <title>Panes con Gallina Benítez | El Auténtico Sabor Criollo en Usulután</title>
+    <meta name="title" content="Panes con Gallina Benítez | El Auténtico Sabor Criollo en Usulután" />
+    <meta
+      name="description"
+      content="Disfruta de los mejores Panes con Gallina Criolla de patio en Usulután Este, El Salvador. Sabor tradicional desde 1968. Pedidos por WhatsApp al +503 7216-4704."
+    />
+    <meta
+      name="keywords"
+      content="panes con gallina, panes benitez, usulutan, comida tipica el salvador, gallina criolla, panes con pechuga, usulutan este, iglesia el calvario"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Panes con Gallina Benítez" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_SV" />
+    <meta property="og:title" content="Panes con Gallina Benítez | El Auténtico Sabor Criollo" />
+    <meta
+      property="og:description"
+      content="Sabor tradicional de gallina criolla de patio en Usulután Este. Visítanos los sábados de 4:00 PM a 10:00 PM o haz tu pedido a domicilio."
+    />
+    <meta property="og:image" content="/logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Panes con Gallina Benítez | El Auténtico Sabor Criollo" />
+    <meta
+      property="twitter:description"
+      content="Sabor tradicional de gallina criolla de patio en Usulután Este. Visítanos los sábados de 4:00 PM a 10:00 PM."
+    />
+    <meta property="twitter:image" content="/logo.png" />
+
+    <!-- Schema.org Datos Estructurados para Posicionamiento Local en Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Panes con Gallina Benítez",
+        "image": "/logo.png",
+        "description": "Restaurante tradicional de Panes con Gallina Criolla de patio en Usulután Este, El Salvador.",
+        "telephone": "+50372164704",
+        "servesCuisine": "Salvadoran",
+        "priceRange": "$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Final Avenida Gregorio Melara al costado Oriente de Iglesia El Calvario Barrio El Calvario",
+          "addressLocality": "Usulután Este",
+          "addressRegion": "Usulután",
+          "addressCountry": "SV"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "16:00",
+            "closes": "22:00"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
