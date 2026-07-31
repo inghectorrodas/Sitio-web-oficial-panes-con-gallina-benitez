@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Facebook, Instagram, Phone, MapPin, Heart, Eye } from 'lucide-react';
+import { Facebook, Instagram, Phone, MapPin, Heart, Eye, Globe } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
 interface FooterProps {
@@ -104,6 +104,10 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
               <div className="flex items-center justify-center md:justify-start gap-2 text-center md:text-left">
                 <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                 <span>WhatsApp Domicilios: {RESTAURANT_INFO.whatsapp}</span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start gap-2 text-center md:text-left">
+                <Globe className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                <span>Pagina Web :. <a href="https://www.panescongallinabenitez.com" target="_blank" rel="noopener noreferrer" className="text-orange-400 font-semibold hover:underline">www.panescongallinabenitez.com</a></span>
               </div>
               <div className="text-[11px] text-zinc-500 mt-2 text-center md:text-left">
                 Horario: {RESTAURANT_INFO.hoursWeekdays}
