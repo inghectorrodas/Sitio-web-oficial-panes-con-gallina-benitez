@@ -1,5 +1,5 @@
-import React from 'react';
-import { Facebook, Instagram, Phone, MapPin, Heart } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Facebook, Instagram, Phone, MapPin, Heart, Eye } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
 interface FooterProps {
@@ -8,6 +8,22 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
+  const [visitCount, setVisitCount] = useState<number>(0);
+
+  useEffect(() => {
+    const BASE_VISITS = 14280;
+    const storedVisits = localStorage.getItem('pcgb_visit_count');
+    let currentVisits = storedVisits ? parseInt(storedVisits, 10) : BASE_VISITS;
+
+    if (!sessionStorage.getItem('pcgb_visited_session')) {
+      currentVisits += 1;
+      sessionStorage.setItem('pcgb_visited_session', 'true');
+      localStorage.setItem('pcgb_visit_count', currentVisits.toString());
+    }
+
+    setVisitCount(currentVisits);
+  }, []);
+
   return (
     <footer className="bg-zinc-950 border-t border-zinc-900 text-white mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -77,7 +93,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
             </ul>
           </div>
 
-          {/* Contact Details */}
+          {/* Contact Details & Visit Counter */}
           <div className="md:col-span-4 space-y-3">
             <h4 className="text-xs font-black uppercase text-orange-500 tracking-widest">Atención al Cliente</h4>
             <div className="space-y-2 text-xs text-zinc-400">
@@ -92,6 +108,25 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
               <div className="text-[11px] text-zinc-500 mt-2">
                 Horario: {RESTAURANT_INFO.hoursWeekdays}
               </div>
+
+              {/* Page Visit Counter */}
+              <div className="pt-3">
+                <div className="inline-flex items-center gap-3 bg-zinc-900/90 border border-zinc-800/90 px-3.5 py-2 rounded-2xl shadow-inner">
+                  <div className="relative flex items-center justify-center w-7 h-7 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                    <Eye className="w-4 h-4" />
+                    <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase font-bold text-zinc-500 tracking-wider">
+                      Visitas a la página
+                    </div>
+                    <div className="text-sm font-black text-white tracking-wide font-mono">
+                      {visitCount ? visitCount.toLocaleString('es-SV') : '...'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 
