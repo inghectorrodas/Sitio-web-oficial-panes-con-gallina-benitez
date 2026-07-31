@@ -52,6 +52,18 @@ export interface CartItem {
   selectedExtras?: string[];
 }
 
+export interface Testimonial {
+  id: string;
+  name: string;
+  location: string;
+  comment: string;
+  rating: number;
+  date: string;
+  dishRecommended?: string;
+  avatar?: string;
+  verified?: boolean;
+}
+
 export interface ContactInfo {
   phone?: string;
   whatsapp: string;

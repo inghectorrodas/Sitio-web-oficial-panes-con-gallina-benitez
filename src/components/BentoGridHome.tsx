@@ -18,6 +18,7 @@ import {
 import { MENU_ITEMS, RESTAURANT_INFO, INITIAL_SOCIAL_POSTS } from '../data/restaurantData';
 import { MenuItem } from '../types';
 import { getImage } from '../utils/imageStore';
+import { TestimonialsSection } from './TestimonialsSection';
 
 interface BentoGridHomeProps {
   onSelectTab: (tab: string) => void;
@@ -393,6 +394,9 @@ export const BentoGridHome: React.FC<BentoGridHomeProps> = ({
         </div>
 
       </div>
+
+      {/* Customer Testimonials Section */}
+      <TestimonialsSection />
     </div>
   );
 };

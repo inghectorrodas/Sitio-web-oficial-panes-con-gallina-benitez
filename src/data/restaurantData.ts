@@ -1,4 +1,4 @@
-import { MenuItem, SocialPost, HistoryEvent, ContactInfo } from '../types';
+import { MenuItem, SocialPost, HistoryEvent, ContactInfo, Testimonial } from '../types';
 import pan1Img from '../assets/pan1.jpg';
 import pan2Img from '../assets/pan2.jpg';
 import mamaImg from '../assets/mama.png';
@@ -156,26 +156,56 @@ export const HISTORY_TIMELINE: HistoryEvent[] = [
   }
 ];
 
-export const TESTIMONIALS = [
+export const INITIAL_TESTIMONIALS: Testimonial[] = [
   {
-    id: 1,
-    name: 'Carlos Mendoza',
-    comment: 'Los mejores panes con gallina de todo San Salvador. La salsa de recaudo está bien especiada y la carne super jugosa.',
+    id: 't-1',
+    name: 'Carlos Ramos',
+    location: 'Usulután Este',
+    comment: 'Desde niño venía con mis padres a comer los panes de la abuela Lucía. El Pan con Pechuga sigue teniendo esa misma salsa espesita y abundante berro fresco. ¡Los mejores de Usulután!',
     rating: 5,
-    location: 'Antiguo Cuscatlán'
+    date: 'Hace 2 días',
+    dishRecommended: 'Pan Con Pechuga',
+    verified: true
   },
   {
-    id: 2,
-    name: 'Sonia de Portillo',
-    comment: 'Llevo viniendo con mi familia desde los noventa. El sabor no ha cambiado nada, el curtido artesanal es inigualable.',
+    id: 't-2',
+    name: 'Elena Monterrosa',
+    location: 'San Salvador',
+    comment: 'Viajamos los sábados desde San Salvador exclusivamente para comer aquí. El pan con entrepierna es enorme, super jugoso y el curtido casero le da el toque perfecto. ¡100% recomendado!',
     rating: 5,
-    location: 'Escalón'
+    date: 'Hace 5 días',
+    dishRecommended: 'Pan Con Entre Pierna',
+    verified: true
   },
   {
-    id: 3,
-    name: 'Roberto Gómez',
-    comment: 'Increíble servicio. Pido por WhatsApp para pasar trayendo los domingos la sopa y el pan especial. 100% recomendado.',
+    id: 't-3',
+    name: 'Ing. Mauricio Zelaya',
+    location: 'Barrio El Calvario',
+    comment: 'Excelente atención y los pedidos a domicilio por WhatsApp son super rápidos. La gallina india tiene ese verdadero sabor criado en patio. Orgullo de Usulután.',
     rating: 5,
-    location: 'Santa Tecla'
+    date: 'Hace 1 semana',
+    dishRecommended: 'Pan Con Pechuga',
+    verified: true
+  },
+  {
+    id: 't-4',
+    name: 'Patricia Fuentes',
+    location: 'San Miguel',
+    comment: 'Incomparable. La combinación del pan de agua suave, berro fresco, huevo duro y la salsa bien caliente es una verdadera delicia. Siempre que paso por Usulután hago mi parada obligatoria.',
+    rating: 5,
+    date: 'Hace 2 semanas',
+    dishRecommended: 'Pan Con Entre Pierna',
+    verified: true
+  },
+  {
+    id: 't-5',
+    name: 'José Luis Barahona',
+    location: 'Houston, TX',
+    comment: 'Cada vez que regreso a El Salvador a visitar a la familia, venir al Barrio El Calvario por mi Pan con Gallina Benítez es tradición. El auténtico sabor criollo que se extraña tanto.',
+    rating: 5,
+    date: 'Hace 3 semanas',
+    dishRecommended: 'Pan Con Pechuga',
+    verified: true
   }
 ];
+

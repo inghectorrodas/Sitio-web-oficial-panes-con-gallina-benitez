@@ -11,14 +11,14 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
   const [visitCount, setVisitCount] = useState<number>(0);
 
   useEffect(() => {
-    const BASE_VISITS = 14280;
-    const storedVisits = localStorage.getItem('pcgb_visit_count');
+    const BASE_VISITS = 0;
+    const storedVisits = localStorage.getItem('pcgb_visit_count_v2');
     let currentVisits = storedVisits ? parseInt(storedVisits, 10) : BASE_VISITS;
 
-    if (!sessionStorage.getItem('pcgb_visited_session')) {
+    if (!sessionStorage.getItem('pcgb_visited_session_v2')) {
       currentVisits += 1;
-      sessionStorage.setItem('pcgb_visited_session', 'true');
-      localStorage.setItem('pcgb_visit_count', currentVisits.toString());
+      sessionStorage.setItem('pcgb_visited_session_v2', 'true');
+      localStorage.setItem('pcgb_visit_count_v2', currentVisits.toString());
     }
 
     setVisitCount(currentVisits);
@@ -27,11 +27,11 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
   return (
     <footer className="bg-zinc-950 border-t border-zinc-900 text-white mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 text-center md:text-left">
           
           {/* Brand Info */}
-          <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
+          <div className="md:col-span-5 space-y-4 flex flex-col items-center md:items-start">
+            <div className="flex items-center justify-center md:justify-start gap-3">
               <div>
                 <div className="text-xl font-black tracking-tighter uppercase leading-none">
                   <span className="text-orange-500">Panes con Gallina</span> Benítez
@@ -42,11 +42,11 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
               </div>
             </div>
 
-            <p className="text-xs text-zinc-400 leading-relaxed max-w-sm">
+            <p className="text-xs text-zinc-400 leading-relaxed max-w-sm mx-auto md:mx-0">
               Tradición culinaria salvadoreña servida con la sazón casera de la abuela Lucía. Panes con gallina india, Salsa espeso caliente y curtido artesanal.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-1">
               <a
                 href={RESTAURANT_INFO.facebookUrl}
                 target="_blank"
@@ -67,9 +67,9 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
           </div>
 
           {/* Quick Links */}
-          <div className="md:col-span-3 space-y-3">
+          <div className="md:col-span-3 space-y-3 flex flex-col items-center md:items-start">
             <h4 className="text-xs font-black uppercase text-orange-500 tracking-widest">Navegación</h4>
-            <ul className="space-y-2 text-xs font-semibold text-zinc-400">
+            <ul className="space-y-2 text-xs font-semibold text-zinc-400 flex flex-col items-center md:items-start">
               <li>
                 <button onClick={() => onSelectTab('home')} className="hover:text-orange-400 transition-colors">
                   Inicio
@@ -94,36 +94,31 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
           </div>
 
           {/* Contact Details & Visit Counter */}
-          <div className="md:col-span-4 space-y-3">
+          <div className="md:col-span-4 space-y-3 flex flex-col items-center md:items-start">
             <h4 className="text-xs font-black uppercase text-orange-500 tracking-widest">Atención al Cliente</h4>
-            <div className="space-y-2 text-xs text-zinc-400">
-              <div className="flex items-center gap-2">
+            <div className="space-y-2 text-xs text-zinc-400 flex flex-col items-center md:items-start w-full">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-center md:text-left">
                 <MapPin className="w-4 h-4 text-orange-500 flex-shrink-0" />
                 <span>{RESTAURANT_INFO.address}</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-center md:text-left">
                 <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                 <span>WhatsApp Domicilios: {RESTAURANT_INFO.whatsapp}</span>
               </div>
-              <div className="text-[11px] text-zinc-500 mt-2">
+              <div className="text-[11px] text-zinc-500 mt-2 text-center md:text-left">
                 Horario: {RESTAURANT_INFO.hoursWeekdays}
               </div>
 
               {/* Page Visit Counter */}
-              <div className="pt-3">
-                <div className="inline-flex items-center gap-3 bg-zinc-900/90 border border-zinc-800/90 px-3.5 py-2 rounded-2xl shadow-inner">
-                  <div className="relative flex items-center justify-center w-7 h-7 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20">
+              <div className="pt-3 flex justify-center md:justify-start w-full">
+                <div className="inline-flex items-center gap-2.5 bg-zinc-900/90 border border-zinc-800/90 px-4 py-2 rounded-xl shadow-inner">
+                  <div className="relative flex items-center justify-center text-orange-400">
                     <Eye className="w-4 h-4" />
-                    <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                    <span className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
                   </div>
-                  <div>
-                    <div className="text-[10px] uppercase font-bold text-zinc-500 tracking-wider">
-                      Visitas a la página
-                    </div>
-                    <div className="text-sm font-black text-white tracking-wide font-mono">
-                      {visitCount ? visitCount.toLocaleString('es-SV') : '...'}
-                    </div>
-                  </div>
+                  <span className="text-sm font-black text-white tracking-wider font-mono">
+                    {visitCount ? visitCount.toLocaleString('es-SV') : '0'}
+                  </span>
                 </div>
               </div>
 
