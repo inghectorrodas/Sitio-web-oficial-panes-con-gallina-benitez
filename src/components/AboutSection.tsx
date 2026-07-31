@@ -112,7 +112,7 @@ export const AboutSection: React.FC = () => {
               alt="Pan Con Pechuga Tradicional"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               onError={(e) => {
-                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=600';
+                (e.target as HTMLImageElement).src = '/pan1.jpg';
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-4 flex flex-col justify-end">
@@ -127,7 +127,7 @@ export const AboutSection: React.FC = () => {
               alt="Pan Con Entre Pierna Benítez"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               onError={(e) => {
-                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=600';
+                (e.target as HTMLImageElement).src = '/pan2.jpg';
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-4 flex flex-col justify-end">

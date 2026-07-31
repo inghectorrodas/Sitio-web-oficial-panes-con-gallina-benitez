@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { CartItem } from '../types';
 import { RESTAURANT_INFO } from '../data/restaurantData';
+import { getImage } from '../utils/imageStore';
 
 interface OrderCartModalProps {
   isOpen: boolean;
@@ -160,9 +161,13 @@ export const OrderCartModal: React.FC<OrderCartModalProps> = ({
                   className="bg-zinc-900 border border-zinc-800 p-3.5 rounded-2xl flex items-center justify-between gap-3"
                 >
                   <img
-                    src={item.menuItem.image}
+                    src={getImage(item.menuItem.id === 'pan-pechuga' ? 'pan1' : item.menuItem.id === 'pan-entre-pierna' ? 'pan2' : 'pan1', item.menuItem.image)}
                     alt={item.menuItem.name}
                     className="w-14 h-14 rounded-xl object-cover border border-zinc-800 flex-shrink-0"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = item.menuItem.id === 'pan-entre-pierna' ? '/pan2.jpg' : '/pan1.jpg';
+                    }}
                   />
 
                   <div className="flex-1 min-w-0">

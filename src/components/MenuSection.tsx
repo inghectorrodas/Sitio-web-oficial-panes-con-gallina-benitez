@@ -126,9 +126,13 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                 {/* Image & Badge */}
                 <div className="relative h-48 w-full overflow-hidden bg-zinc-950">
                   <img
-                    src={getImage(item.id === 'pan-pechuga' ? 'pan1' : item.id === 'pan-entrepierna' ? 'pan2' : 'pan1', item.image)}
+                    src={getImage(item.id === 'pan-pechuga' ? 'pan1' : item.id === 'pan-entre-pierna' ? 'pan2' : 'pan1', item.image)}
                     alt={item.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = item.id === 'pan-entre-pierna' ? '/pan2.jpg' : '/pan1.jpg';
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-80"></div>
 
@@ -210,9 +214,13 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
           <div className="bg-zinc-900 border border-zinc-800 rounded-3xl max-w-lg w-full overflow-hidden space-y-4 shadow-2xl">
             <div className="relative h-56 w-full">
               <img
-                src={getImage(selectedItemDetail.id === 'pan-pechuga' ? 'pan1' : selectedItemDetail.id === 'pan-entrepierna' ? 'pan2' : 'pan1', selectedItemDetail.image)}
+                src={getImage(selectedItemDetail.id === 'pan-pechuga' ? 'pan1' : selectedItemDetail.id === 'pan-entre-pierna' ? 'pan2' : 'pan1', selectedItemDetail.image)}
                 alt={selectedItemDetail.name}
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = selectedItemDetail.id === 'pan-entre-pierna' ? '/pan2.jpg' : '/pan1.jpg';
+                }}
               />
               <button
                 onClick={() => setSelectedItemDetail(null)}

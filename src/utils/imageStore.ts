@@ -89,15 +89,34 @@ export function saveStoredImages(images: Record<string, string>) {
 
 export function getImage(id: string, defaultFallback?: string): string {
   const custom = getStoredImages();
+
+  // Map dish IDs to primary image slot keys
+  let slotKey = id;
+  if (id === 'pan-pechuga' || id === 'pan_con_gallina') {
+    slotKey = 'pan1';
+  } else if (id === 'pan-entre-pierna' || id === 'pan-entrepierna' || id === 'pan_con_entrepierna') {
+    slotKey = 'pan2';
+  }
+
+  // 1. Check custom stored image by primary slot key or original ID
+  if (custom[slotKey] && custom[slotKey].trim() !== '') {
+    return custom[slotKey];
+  }
   if (custom[id] && custom[id].trim() !== '') {
     return custom[id];
   }
+
+  // 2. Check provided default fallback
   if (defaultFallback && defaultFallback.trim() !== '') {
     return defaultFallback;
   }
-  const slot = IMAGE_SLOTS.find((s) => s.id === id);
+
+  // 3. Check IMAGE_SLOTS configuration
+  const slot = IMAGE_SLOTS.find((s) => s.id === slotKey || s.id === id);
   if (slot?.defaultImage && slot.defaultImage.trim() !== '') {
     return slot.defaultImage;
   }
-  return pan1Img;
+
+  // 4. Default fallback asset
+  return slotKey === 'pan2' ? pan2Img : pan1Img;
 }

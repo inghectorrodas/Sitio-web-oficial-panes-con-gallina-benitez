@@ -11,15 +11,23 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
   const [visitCount, setVisitCount] = useState<number>(0);
 
   useEffect(() => {
-    const BASE_VISITS = 0;
-    const storedVisits = localStorage.getItem('pcgb_visit_count_v2');
-    let currentVisits = storedVisits ? parseInt(storedVisits, 10) : BASE_VISITS;
+    const BASE_VISITS = 1248;
+    const storedV3 = localStorage.getItem('pcgb_visit_count_v3');
+    const storedV2 = localStorage.getItem('pcgb_visit_count_v2');
 
-    if (!sessionStorage.getItem('pcgb_visited_session_v2')) {
-      currentVisits += 1;
-      sessionStorage.setItem('pcgb_visited_session_v2', 'true');
-      localStorage.setItem('pcgb_visit_count_v2', currentVisits.toString());
+    let currentVisits = storedV3
+      ? parseInt(storedV3, 10)
+      : storedV2
+      ? parseInt(storedV2, 10)
+      : BASE_VISITS;
+
+    if (isNaN(currentVisits) || currentVisits < 1) {
+      currentVisits = BASE_VISITS;
     }
+
+    // Increment visit count on every page visit/load
+    currentVisits += 1;
+    localStorage.setItem('pcgb_visit_count_v3', currentVisits.toString());
 
     setVisitCount(currentVisits);
   }, []);
@@ -115,14 +123,19 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
 
               {/* Page Visit Counter */}
               <div className="pt-3 flex justify-center md:justify-start w-full">
-                <div className="inline-flex items-center gap-2.5 bg-zinc-900/90 border border-zinc-800/90 px-4 py-2 rounded-xl shadow-inner">
+                <div className="inline-flex items-center gap-3 bg-zinc-900/90 border border-zinc-800/90 px-4 py-2 rounded-xl shadow-inner text-left">
                   <div className="relative flex items-center justify-center text-orange-400">
                     <Eye className="w-4 h-4" />
                     <span className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
                   </div>
-                  <span className="text-sm font-black text-white tracking-wider font-mono">
-                    {visitCount ? visitCount.toLocaleString('es-SV') : '0'}
-                  </span>
+                  <div className="flex flex-col leading-none">
+                    <span className="text-[10px] uppercase font-bold text-zinc-500 tracking-wider mb-0.5">
+                      Visitas
+                    </span>
+                    <span className="text-sm font-black text-white tracking-wider font-mono">
+                      {visitCount ? visitCount.toLocaleString('es-SV') : '1'}
+                    </span>
+                  </div>
                 </div>
               </div>
 
