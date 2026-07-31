@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Phone, Clock, MapPin, Menu, X, Sparkles, Camera } from 'lucide-react';
+import { ShoppingBag, Phone, Clock, MapPin, Menu, X, Sparkles } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
 interface HeaderProps {
@@ -163,16 +163,6 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
             );
           })}
-          <button
-            onClick={() => {
-              onOpenImageManager();
-              setMobileMenuOpen(false);
-            }}
-            className="w-full text-left px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-wider flex items-center justify-between bg-zinc-900 border border-zinc-800 text-orange-400"
-          >
-            <span>Subir / Administrar Imágenes</span>
-            <Camera className="w-4 h-4" />
-          </button>
         </div>
       )}
     </header>
